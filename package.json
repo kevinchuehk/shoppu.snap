@@ -1,0 +1,33 @@
+{
+  "name": "shoppu",
+  "version": "0.0.1",
+  "main": "src/main.js",
+  "license": "MIT",
+  "author": "YPCloud",
+  "description": "The shoppu",
+  "scripts": {
+    "start": "electron .",
+    "test": "TEST=true electron .",
+    "dist:armhf": "electron-builder --linux --armv7l snap",
+    "dist": "electron-builder --linux --x64 snap"
+  },
+  "build": {
+    "appId": "com.shoppu",
+   "productName": "shoppu",
+    "linux": {
+      "target": "snap",
+      "icon": "gui/icon.png"
+    },
+    "snap": {
+      "confinement": "strict",
+      "summary": "The shoppu",
+      "grade": "stable",
+      "desktop": "gui/shoppu.desktop",
+      "plugs": ["desktop", "desktop-legacy", "home", "x11", "unity7", "browser-support", "network", "gsettings", "pulseaudio", "opengl"]
+    }
+  },
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^21.0.15"
+  }
+}

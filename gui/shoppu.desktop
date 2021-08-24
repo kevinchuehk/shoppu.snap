@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=shoppu
+Exec=shoppu --no-sandbox
+Icon=/snap/shoppu/current/gui/icon.png
+Type=Application
+StartupNotify=true
